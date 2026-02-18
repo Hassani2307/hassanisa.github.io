@@ -367,6 +367,7 @@
         .cert-link:hover { color: var(--green); }
 
         /* ─── RESUME ─────────────────────────────────── */
+        /* ─── RESUME ─────────────────────────────────── */
         #resume { background: var(--off-white); }
         .resume-head { text-align:center; margin-bottom:3rem; }
         .resume-head .section-desc { margin:0 auto; max-width:500px; }
@@ -395,6 +396,8 @@
             border-top:1px solid var(--border);
         }
         .resume-footer span { font-size:.82rem; color: var(--gray); }
+
+
 
         /* ─── CONTACT ────────────────────────────────── */
         #contact { background: var(--black); }
@@ -532,34 +535,48 @@
             .nav-links a { display: block; padding: 1.3rem 2rem; font-size: 1.05rem; }
             .nav-links a::after { display: none; }
             .nav-links a:hover { background: var(--off-white); color: var(--green); }
-            .hero-inner { grid-template-columns:1fr; text-align:center; padding: 3rem 1.5rem; gap: 0; }
-            .hero-photo { display:none; }
+            .hero-inner { grid-template-columns:1fr; text-align:center; padding: 3rem 1.8rem; gap: 0; }
+            .hero-photo { order: -1; }
+            .hero-text { order: 1; }
+            .hero-photo {
+                display: flex;
+                width: 120px; height: 120px;
+                border-radius: 50%;
+                margin: 0 auto 1.8rem auto;
+                border: 3px solid var(--green);
+                overflow: hidden;
+            }
+            .hero-photo img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+            .hero-photo .upload-hint { display:none; }
             .hero-text h1 { font-size: 2.8rem !important; margin-bottom: 1rem; }
             .hero-role { font-size: 0.9rem; margin-bottom: 1.5rem; }
             .hero-bio { margin-left:auto; margin-right:auto; font-size: 1rem; margin-bottom: 2rem; }
-            .hero-btns { justify-content:center; flex-direction: column; gap: 1rem; }
+            .hero-btns { justify-content:center; flex-direction: column; gap: 1rem; align-items: center; }
             .hero-btns .btn { width: 100%; max-width: 320px; text-align: center; }
             .about-grid { grid-template-columns:1fr; gap:3rem; }
             .projects-grid { grid-template-columns:1fr; }
             .certs-grid { grid-template-columns:1fr; }
             .cert-card.featured { flex-direction:column; gap:1rem; }
             .contact-grid { grid-template-columns:1fr; gap:3rem; }
-            .container { padding:0 1.5rem; }
+            .container { padding:0 1.8rem; }
             .section-pad { padding:4rem 0; }
         }
         @media (max-width:600px) {
             .hero-text h1 { font-size:2.4rem !important; }
             .hero-role { font-size: 0.85rem; line-height: 1.5; }
             .hero-bio { font-size: 0.95rem; }
-            .section-title { font-size: 2rem; }
+            .section-title { font-size: 2rem; letter-spacing: -0.5px; }
+            .eyebrow { margin-bottom: .6rem; }
+            .container { padding: 0 1.8rem; }
+            .about-left p, .section-desc { max-width: 100%; box-sizing: border-box; }
             .info-cards { grid-template-columns:1fr; }
             .form-row { grid-template-columns:1fr; }
             .resume-bar { flex-direction:column; gap:1rem; text-align:center; }
             .resume-footer { flex-direction:column; gap:.8rem; text-align:center; }
             .resume-frame iframe { height:580px; }
             .contact-form-box { padding:1.5rem; }
-            .stat-strip { flex-direction:column; }
-            .stat-item + .stat-item { border-left:none; border-top:1px solid var(--border); }
+            .stat-strip { flex-direction:row; }
+            .stat-item + .stat-item { border-left:1px solid var(--border); border-top:none; }
         }
     </style>
     <script>
@@ -817,7 +834,7 @@
                         <div class="contact-ico">📧</div>
                         <div class="contact-txt">
                             <small>Email</small>
-                            <a href="mailto:Kehindeisa23@gmail.com">Kehindeisa23@gmail.com</a>
+                            <a href="/cdn-cgi/l/email-protection#a9e2ccc1c0c7cdccc0dac89b9ae9cec4c8c0c587cac6c4"><span class="__cf_email__" data-cfemail="5219373a3b3c36373b2133606112353f333b3e7c313d3f">[email&#160;protected]</span></a>
                         </div>
                     </div>
                     <div class="contact-row">
@@ -878,7 +895,7 @@
 <!-- TOAST -->
 <div id="toast"></div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.addEventListener('click', function(e) {
     const nav = document.getElementById('nav-links');
     const ham = document.getElementById('hamburger');
@@ -955,12 +972,3 @@ document.getElementById('hero-photo').addEventListener('click', () => {
     inp.click();
 });
 window.addEventListener('load', () => {
-    initAv();
-    const p = localStorage.getItem('hi_photo');
-    if (p) {
-        document.getElementById('hero-photo').innerHTML = '<img src="'+p+'" alt="Hassan Isa"><div class="upload-hint">Click to change</div>';
-    }
-});
-</script>
-</body>
-</html>

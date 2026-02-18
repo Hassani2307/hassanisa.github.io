@@ -367,7 +367,7 @@
         .cert-link:hover { color: var(--green); }
 
         /* ─── EXPERIENCE ─────────────────────────────── */
-        #experience { background: var(--off-white); }
+        #experience { background: var(--off-white); padding: 5rem 0; }
         .exp-timeline {
             position: relative;
             max-width: 800px;
@@ -380,34 +380,27 @@
             position: relative;
         }
         .exp-item:last-child { margin-bottom: 0; }
-        .exp-logo {
-            width: 56px; height: 56px;
-            border: 1.5px solid var(--border);
-            background: var(--card);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.6rem;
-            flex-shrink: 0;
-            position: relative;
-            z-index: 1;
-        }
         .exp-body {
             background: var(--card);
             border: 1px solid var(--border);
-            padding: 1.4rem 1.6rem;
+            border-left: 4px solid var(--green);
+            padding: 2rem 2rem;
             flex: 1;
-            transition: border-color .2s;
+            transition: box-shadow .2s;
         }
-        .exp-body:hover { border-color: var(--green); }
+        .exp-body:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,.07);
+        }
         .exp-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             gap: 1rem;
-            margin-bottom: .3rem;
+            margin-bottom: .6rem;
         }
         .exp-role {
             font-family: 'Crimson Pro', serif;
-            font-size: 1.2rem;
+            font-size: 1.35rem;
             font-weight: 600;
             color: var(--black);
             line-height: 1.2;
@@ -417,12 +410,13 @@
             color: var(--green);
             font-weight: 700;
             white-space: nowrap;
-            padding: .25rem .7rem;
+            padding: .3rem .8rem;
             border: 1px solid rgba(0,255,136,.3);
             background: rgba(0,255,136,.06);
+            flex-shrink: 0;
         }
         .exp-company {
-            font-size: .88rem;
+            font-size: 1rem;
             color: var(--gray);
             font-weight: 500;
         }
@@ -634,7 +628,7 @@
             .resume-frame iframe { height:580px; }
             .contact-form-box { padding:1.5rem; }
             .exp-timeline::before { left: 44px; }
-            .exp-header { flex-direction: column; gap: .4rem; }
+            .exp-header { flex-direction: column; align-items: flex-start; gap: .5rem; }
             .exp-dates { align-self: flex-start; }
             .stat-strip { flex-direction:row; }
             .stat-item + .stat-item { border-left:1px solid var(--border); border-top:none; }
@@ -863,7 +857,7 @@
     <div class="container section-pad">
         <span class="eyebrow">Experience</span>
         <h2 class="section-title">Experience</h2>
-        <div style="height:2.5rem;"></div>
+        <div style="height:1rem;"></div>
         <div class="exp-timeline">
 
             <!-- Liberty Mutual -->

@@ -366,7 +366,67 @@
         .cert-card.featured .cert-link { color: var(--green); }
         .cert-link:hover { color: var(--green); }
 
-        /* ─── RESUME ─────────────────────────────────── */
+        /* ─── EXPERIENCE ─────────────────────────────── */
+        #experience { background: var(--off-white); }
+        .exp-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .exp-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        .exp-item:last-child { margin-bottom: 0; }
+        .exp-logo {
+            width: 56px; height: 56px;
+            border: 1.5px solid var(--border);
+            background: var(--card);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+        .exp-body {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 1.4rem 1.6rem;
+            flex: 1;
+            transition: border-color .2s;
+        }
+        .exp-body:hover { border-color: var(--green); }
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: .3rem;
+        }
+        .exp-role {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--black);
+            line-height: 1.2;
+        }
+        .exp-dates {
+            font-size: .75rem;
+            color: var(--green);
+            font-weight: 700;
+            white-space: nowrap;
+            padding: .25rem .7rem;
+            border: 1px solid rgba(0,255,136,.3);
+            background: rgba(0,255,136,.06);
+        }
+        .exp-company {
+            font-size: .88rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
         /* ─── RESUME ─────────────────────────────────── */
         #resume { background: var(--off-white); }
         .resume-head { text-align:center; margin-bottom:3rem; }
@@ -396,8 +456,6 @@
             border-top:1px solid var(--border);
         }
         .resume-footer span { font-size:.82rem; color: var(--gray); }
-
-
 
         /* ─── CONTACT ────────────────────────────────── */
         #contact { background: var(--black); }
@@ -575,6 +633,9 @@
             .resume-footer { flex-direction:column; gap:.8rem; text-align:center; }
             .resume-frame iframe { height:580px; }
             .contact-form-box { padding:1.5rem; }
+            .exp-timeline::before { left: 44px; }
+            .exp-header { flex-direction: column; gap: .4rem; }
+            .exp-dates { align-self: flex-start; }
             .stat-strip { flex-direction:row; }
             .stat-item + .stat-item { border-left:1px solid var(--border); border-top:none; }
         }
@@ -604,6 +665,7 @@
             <li><a href="#about" onclick="closeMenu()">About</a></li>
             <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
             <li><a href="#certificates" onclick="closeMenu()">Certs</a></li>
+            <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
             <li><a href="#resume" onclick="closeMenu()">Resume</a></li>
             <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
         </ul>
@@ -793,6 +855,29 @@
                     <a href="https://www.nsbe.org" class="cert-link" target="_blank">Learn More →</a>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+    <div class="container section-pad">
+        <span class="eyebrow">Experience</span>
+        <h2 class="section-title">Experience</h2>
+        <div style="height:2.5rem;"></div>
+        <div class="exp-timeline">
+
+            <!-- Liberty Mutual -->
+            <div class="exp-item">
+                <div class="exp-body">
+                    <div class="exp-header">
+                        <div class="exp-role">Cybersecurity Intern</div>
+                        <span class="exp-dates">May – September 2026</span>
+                    </div>
+                    <div class="exp-company">Liberty Mutual</div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
